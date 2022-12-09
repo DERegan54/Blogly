@@ -1,0 +1,31 @@
+{% extends 'base.html' %} 
+
+{% block title %}Add Post{% endblock %} 
+
+{% block content %}
+
+<h2>Create Post for {{user.full_name}}:</h2>
+<form method="POST">
+    <input id="title" name="title" type="text" placeholder="Enter post title">
+    <br><br>
+    <textarea id="content" name="content" placeholder="Enter post content"></textarea>
+    <br><br>
+    <button type="submit">Add</button>
+    <button formaction="/" formmethod="GET">Cancel</button></a>
+</form>
+
+{% endblock %} 
+
+<!-- <form method="POST">
+    <label for="first_name">First Name:</label>
+    <input type="text" id="first_name" name="first_name" value="{{user.first_name}}">
+    <br>
+    <label for="last_name">Last Name:</label>
+    <input type="text" id="last_name" name="last_name" value="{{user.last_name}}">
+    <br>
+    <label for="image_url">Image URL:</label>
+    <input type="url" id="image_url" name="image_url">
+    <br>
+    <button type="submit">Save</button>
+    <button formaction="/users" formmethod="GET">Cancel</button></a>
+</form> -->

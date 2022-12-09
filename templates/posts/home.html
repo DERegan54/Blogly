@@ -4,16 +4,25 @@
 
 {% block content %}
 
-<h4>Recent Posts:</h4>
+    <h1 class="nav"><a href="/users"><button>Go to Users List</button></a></h1>
 
+
+<h2>Recent Posts:</h2>
+
+<div class="container">
 {% for post in posts %} 
-<h3><a href="/posts/{{post.id}}">{{post.title}}</a></h3> 
-<p>{{post.content}}</p>
-<p>By {{post.user.full_name}} on {{post.created_at}}</p>  
+    <div class="posts">
+    <h4 class="post_titles"><a href="/posts/{{post.id}}">{{post.title}}</a></h4> 
+    <p>{{post.content}}</p>
+    <p>By {{post.user.full_name}} on {{post.created_at}}</p>  
+    </div>
 {% endfor %}
+</div>
 
 
-<a href="/users"><button>Go to Users List</button></a>
+
+
+
 
 
 {% endblock %}

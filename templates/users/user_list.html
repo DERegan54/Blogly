@@ -4,20 +4,22 @@
 
 {% block content %}
 
+<h1 class="nav"><a href="/"><button>Go to Recent Posts</button></a></h1>
+
+
 <h2>Users:</h2>
-
+<a href="users/add_user"><button>Add New User</button></a>
+<div class="user_list">
 {% for user in users %} 
-<ul>  
 
-    <li>
-        <a href="users/user_details/{{user.id}}">{{user.full_name}}</a>
-    </li>  
-</ul>
+    <ul>  
+        <li>
+            <a href="users/user_details/{{user.id}}">{{user.full_name}}</a>
+        </li>  
+    </ul>
 {% endfor %}
+</div>
 
-<a href="users/add_user"><button>Add User</button></a>
-
-   
 {% endblock %}
 
 

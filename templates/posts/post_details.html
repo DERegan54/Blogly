@@ -4,11 +4,13 @@
 
 {% block content %}
 
-<h1>{{post.title}}</h1>
-
-<p>{{post.content}}</p>
-<h5>By {{post.user.full_name}} on {{post.formatted_datetime}}</h5>
-
+<div class="posts">
+    <p class="post_content">
+        <h3>{{post.title}}</h3>
+        {{post.content}}
+        <h5>By {{post.user.full_name}} on {{post.created_at}}</h5>
+    </p>
+</div>
 <form>
     <button formaction="/posts/{{post.id}}/edit" formmethod="GET">Edit</button>
     <button formaction="/posts/{{post.id}}/delete" formmethod="POST">Delete</button>

@@ -1,0 +1,61 @@
+body {
+    background-color: lavender;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.main_title {
+    text-align: center;
+    font-size: 40px;
+    color: blueviolet; 
+}
+
+.nav {
+    text-align: center;
+    margin-top: -30px;
+}
+
+.post_content {
+    margin-top: -20px;
+}
+
+h5 {
+    color:blueviolet;
+    margin-bottom: -20px;
+}
+h3 {
+    color: blueviolet;
+}
+
+h2 {
+    color: blueviolet;
+}
+
+button {
+    background-color: lightpink;
+    color: rebeccapurple;
+    margin-bottom: 20px;
+}
+
+.add_user_btn {
+    background-color: lightpink;
+    color: rebeccapurple;
+    margin-bottom: -20px;
+}
+
+.user_list {
+    border: 3px ridge lightpink;  
+    margin-bottom: 20px;
+}
+
+.edit_user_form {
+    border: 3px ridge lightpink;
+    padding: 30px;
+    margin-bottom: -10px; 
+}
+
+.posts {
+    border: 3px ridge lightpink;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+

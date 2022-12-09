@@ -5,14 +5,19 @@
 {% block content %}
 
 <h2>Edit Post</h2>
+<div class="posts">
 <form method="POST" action="/posts/{{post.id}}/edit">
-    <label for="title">Title:</label>
+    <p>Title:</p>
     <input id="title" name="title" value="{{post.title}}">
-    <label for="content">Post Content:</label>
+    <br>
+    <p>Content:</p>
     <textarea id="content" name="content">{{post.content}}</textarea>
     <br>
+    <br>
     <a href="/"></a><button type="submit">Update</button>
-    <a href="/"><button>Cancel</button></a>
+    <a href="/"><button>Back to Recent Posts</button></a>
+    <br>
 </form>
+</div>
 
 {% endblock %} 

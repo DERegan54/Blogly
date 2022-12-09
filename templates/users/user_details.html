@@ -3,30 +3,30 @@
 {% block title %}{{user.full_name}}{% endblock %} 
 
 {% block content %}
+<div class="posts">
+    <h2>{{user.full_name}}</h2>
+   
+        {% if user.image_url %}
+        <img src="{{user.image_url}}" alt="{{user.full_name}}">
+        {% endif %} 
 
-<h2>{{user.full_name}}</h2>
+        <form>
+            <button formaction="/users/{{user.id}}/edit_user" formmethod="GET">Edit</button>
+            <button formaction="/users" formmethod="GET">Return to Users List</button>
+            <button formaction="/users/{{user.id}}/delete" formmethod="POST">Delete</button>
+        </form>
+</div>
+<div class="posts">
+        <h3>Posts</h3>
 
-{% if user.image_url %}
-<img src="{{user.image_url}}" alt="{{user.full_name}}">
-{% endif %} 
+        <ul>
+        {% for post in user.posts %} 
+            <li>
+                <a href="/posts/{{post.id}}">{{post.title}} {{post.created_at}}</a>  
+            </li> 
+        {% endfor %}
+        </ul>
 
-<form>
-    <button formaction="/users/{{user.id}}/edit_user" formmethod="GET">Edit</button>
-    <button formaction="/users" formmethod="GET">Return to Users List</button>
-    <button formaction="/users/{{user.id}}/delete" formmethod="POST">Delete</button>
-</form>
-
-
-<h3>Posts</h3>
-
-<ul>
-{% for post in user.posts %} 
-    <li>
-        <a href="/posts/{{post.id}}">{{post.title}} {{post.created_at}}</a>  
-    </li> 
-{% endfor %}
-</ul>
-
-<a href="/users/{{user.id}}/posts/add_post"><button>Add Post</button></a>
-
+        <a href="/users/{{user.id}}/posts/add_post"><button>Add Post</button></a>
+    </div>
 {% endblock %} 

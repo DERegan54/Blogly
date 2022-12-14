@@ -3,26 +3,30 @@
 {% block title %}Blogly{% endblock %} 
 
 {% block content %}
-
-    <h1 class="nav"><a href="/users"><button>Go to Users List</button></a></h1>
-
+<div id="navbar">
+    <h1 class="nav"><a href="/users"><button>User List</button></a> <a href="/tags"><button>Tag List</button></a></h1>
+</div>    
 
 <h2>Recent Posts:</h2>
 
-<div class="container">
+
 {% for post in posts %} 
     <div class="posts">
-    <h4 class="post_titles"><a href="/posts/{{post.id}}">{{post.title}}</a></h4> 
-    <p>{{post.content}}</p>
-    <p>By {{post.user.full_name}} on {{post.created_at}}</p>  
+        <h4 class="post_titles"><a href="/posts/{{post.id}}">{{post.title}}</a></h4> 
+        <p>{{post.content}}</p>
+        <h5>By {{post.user.full_name}} on {{post.created_at}}</h5>  
+    {% if post.tags %} 
+    <br>
+    <p>
+        <h3>Tags:</h3>
+        {% for tag in post.tags %}
+        <a href="/tags/tag_details/{{tag.id}}"><button>{{tag.name}}</button></a>
+        {% endfor %} 
+    </p>
+    {% endif %} 
     </div>
+
 {% endfor %}
-</div>
-
-
-
-
-
 
 
 {% endblock %}

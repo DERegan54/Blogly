@@ -30,10 +30,22 @@ h2 {
     color: blueviolet;
 }
 
+.tag {
+    background-color: blueviolet;
+    color:lightpink;
+}
 button {
     background-color: lightpink;
     color: rebeccapurple;
     margin-bottom: 20px;
+    text-decoration: none;
+}
+
+.btn {
+    background-color: lightpink;
+    color: rebeccapurple;
+    margin-bottom: 20px;
+    text-decoration: none;
 }
 
 .add_user_btn {
@@ -57,5 +69,10 @@ button {
     border: 3px ridge lightpink;
     padding: 20px;
     margin-bottom: 20px;
+}
+
+.inline_btn {
+    display: flex;
+    text-decoration: none;
 }
 

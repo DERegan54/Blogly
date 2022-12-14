@@ -3,21 +3,35 @@
 {% block title %}Edit Post{% endblock %} 
 
 {% block content %}
+<div id="navbar" class="nav">
+    <h1><a href="/"><button>Recent Posts</button></a> <a href="/users"><button>User List</button></a> <a href="/tags"><button>Tag List</button></a></h1>
+</div>
 
 <h2>Edit Post</h2>
+
 <div class="posts">
-<form method="POST" action="/posts/{{post.id}}/edit">
-    <p>Title:</p>
-    <input id="title" name="title" value="{{post.title}}">
-    <br>
-    <p>Content:</p>
-    <textarea id="content" name="content">{{post.content}}</textarea>
-    <br>
-    <br>
-    <a href="/"></a><button type="submit">Update</button>
-    <a href="/"><button>Back to Recent Posts</button></a>
-    <br>
-</form>
+    <form method="POST" action="/posts/{{post.id}}/edit_post">
+        <p>Title:</p>
+        <input id="title" name="title" value="{{post.title}}">
+        <br>
+        <p>Content:</p>
+        <textarea id="content" name="content">{{post.content}}</textarea>
+        <br>
+        <br>
+        <p>Tags:</p>
+        {% for tag in tags %}
+        <input type="checkbox" value="{{tag.id}}" id="tag_{{tag.id}}" 
+            {% if tag in post.tags %} checked {% endif %}
+            name="tags"> 
+        <label for="tag_{{tag.id}}">{{tag.name}}</label>
+        {% endfor %}
+        <br>
+        <br>
+        <button type="submit">Update</button>
+        <a href="/users/user_details/{{post.user_id}}"><button>Cancel</button></a>
+        <br>
+    </form>  
 </div>
 
 {% endblock %} 
+

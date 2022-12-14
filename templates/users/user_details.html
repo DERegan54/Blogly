@@ -3,6 +3,11 @@
 {% block title %}{{user.full_name}}{% endblock %} 
 
 {% block content %}
+<div id="navbar" class="nav">
+    <h1><a href="/"><button>Recent Posts</button></a> <a href="/users"><button>User List</button></a> <a href="/tags"><button>Tag List</button></a></h1>
+</div>
+
+
 <div class="posts">
     <h2>{{user.full_name}}</h2>
    

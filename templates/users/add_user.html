@@ -3,6 +3,9 @@
 {% block title %}Add User{% endblock %} 
 
 {% block content %}
+<div id="navbar" class="nav">
+    <h1><a href="/"><button>Recent Posts</button></a> <a href="/users"><button>User List</button></a> <a href="/tags"><button>Tag List</button></a></h1>
+</div>
 
 <h2>Create a user:</h2>
 <div class="posts">
@@ -18,8 +21,9 @@
         <br>
         <br>
         <button class="add_user_btn" type="submit">Add User</button>
-        <a href="/users"><button>Back to User List</button></a>
+        <a href="/users"><button class="inline_btn">Cancel</button></a>
     </form>
+    
 </div>
 
 {% endblock %} 

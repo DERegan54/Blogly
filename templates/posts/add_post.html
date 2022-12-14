@@ -3,15 +3,30 @@
 {% block title %}Add Post{% endblock %} 
 
 {% block content %}
+<div id="navbar" class="nav">
+    <h1><a href="/"><button>Recent Posts</button></a> <a href="/users"><button>User List</button></a> <a href="/tags"><button>Tag List</button></a></h1>
+</div>
 
 <h2>Create Post for {{user.full_name}}:</h2>
 <form method="POST">
-    <input id="title" name="title" type="text" placeholder="Enter post title">
+    <input id="title" name="title" type="text" placeholder="Enter post title" required>
     <br><br>
-    <textarea id="content" name="content" placeholder="Enter post content"></textarea>
+    <textarea id="content" name="content" placeholder="Enter post content" required></textarea>
     <br><br>
-    <button class="add_btn" type="submit">Add</button>
-    <button class="back_btn" formaction="/" formmethod="GET">Back to Posts</button></a>
+    <div>
+    <p>Add tags to post:</p>
+    {% for tag in tags %}
+        <input type="checkbox" value="{{tag.id}}" id="tag_{{tag.id}}" name="tags">
+        <label for="tag_{{tag.id}}">{{tag.name}}</label>
+    {% endfor %}
+    </div>
+
+    <br>
+    <br>
+    <div>
+        <button type="submit" class="add_btn">Add Post</button>
+        <button class="back_btn" formaction="/" formmethod="GET">Cancel</button></a>
+    </div>      
 </form>
 
 {% endblock %} 

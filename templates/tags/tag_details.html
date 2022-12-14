@@ -1,0 +1,26 @@
+{% extends 'base.html' %} 
+
+{% block title %}{{tag.name}}{% endblock %} 
+
+{% block content %}
+<div id="navbar" class="nav">
+    <h1><a href="/"><button>Recent Posts</button></a> <a href="/users"><button>User List</button></a> <a href="/tags"><button>Tag List</button></a></h1>
+</div>
+
+<div class="posts">
+    <p class="post_content">
+        <h3>{{tag.name}}</h3>
+        <ul>
+            {% for post in tag.posts %} 
+            <li><a href="/posts/{{post.id}}">{{post.title}}</a></li>
+            {% endfor %} 
+        </ul>
+    </p>
+</div>
+<form>
+    <button formaction="/tags/{{tag.id}}/edit_tag" formmethod="GET">Edit</button>
+    <button formaction="/tags/{{tag.id}}/delete" formmethod="POST">Delete</button>
+    <button formaction="/tags" formmethod="GET">Back</button>
+</form>
+
+{% endblock %} 

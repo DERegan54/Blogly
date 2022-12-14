@@ -3,6 +3,9 @@
 {% block title %}Edit {{user.full_name}}{% endblock %} 
 
 {% block content %}
+<div id="navbar" class="nav">
+    <h1><a href="/"><button>Recent Posts</button></a> <a href="/users"><button>User List</button></a> <a href="/tags"><button>Tag List</button></a></h1>
+</div>
 
 <h2>Edit User</h2>
 <div class="edit_user_form">
@@ -18,7 +21,7 @@
     <br>
     <br>
     <button type="submit">Save</button>
-    <button formaction="/users" formmethod="GET">Return to Users List</button></a>
+    <button formaction="/users" formmethod="GET">Cancel</button></a>
 </form>
 </div>
 {% endblock %} 
